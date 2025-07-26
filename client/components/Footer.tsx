@@ -66,6 +66,43 @@ export default function Footer() {
     }
   };
 
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!newsletterEmail.trim()) return;
+
+    setIsSubscribing(true);
+    setSubscriptionStatus("idle");
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email: newsletterEmail }),
+      });
+
+      if (response.ok) {
+        setSubscriptionStatus("success");
+        setNewsletterEmail("");
+      } else {
+        const error = await response.json();
+        if (response.status === 409) {
+          setSubscriptionStatus("error");
+        } else {
+          setSubscriptionStatus("error");
+        }
+      }
+    } catch (error) {
+      console.error("Error subscribing to newsletter:", error);
+      setSubscriptionStatus("error");
+    } finally {
+      setIsSubscribing(false);
+      setTimeout(() => setSubscriptionStatus("idle"), 3000);
+    }
+  };
+
   return (
     <footer className="relative bg-gradient-to-b from-background to-slate-900 border-t border-blood-500/20">
       {/* Blood splatter decorations */}
