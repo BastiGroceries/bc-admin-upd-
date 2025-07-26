@@ -178,6 +178,13 @@ export default function AdminMessages() {
           </div>
         )}
       </div>
+
+      <LogoutDialog
+        isOpen={showLogoutDialog}
+        onClose={() => setShowLogoutDialog(false)}
+        onConfirm={handleLogout}
+        isLoggingOut={isLoggingOut}
+      />
     </div>
   );
 }
