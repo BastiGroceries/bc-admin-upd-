@@ -12,7 +12,10 @@ import AdminPanel from "./pages/AdminPanel";
 import AdminMessages from "./pages/AdminMessages";
 import MessageView from "./pages/MessageView";
 import AdminLogin from "./pages/AdminLogin";
+import StaffLogin from "./pages/StaffLogin";
+import StaffPanel from "./pages/StaffPanel";
 import ProtectedRoute from "./components/ProtectedRoute";
+import ProtectedStaffRoute from "./components/ProtectedStaffRoute";
 
 const queryClient = new QueryClient();
 
