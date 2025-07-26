@@ -77,8 +77,8 @@ export const staffLogin: RequestHandler = (req, res) => {
   }
 };
 
-// Admin logout
-export const adminLogout: RequestHandler = (req, res) => {
+// Logout (both admin and staff)
+export const logout: RequestHandler = (req, res) => {
   try {
     const { sessionToken } = req.body;
 
@@ -86,18 +86,18 @@ export const adminLogout: RequestHandler = (req, res) => {
       activeSessions.delete(sessionToken);
     }
 
-    res.json({ 
-      success: true, 
-      message: "Logout successful" 
+    res.json({
+      success: true,
+      message: "Logout successful"
     });
   } catch (error) {
-    console.error("Error during admin logout:", error);
+    console.error("Error during logout:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
 
-// Verify admin session
-export const verifyAdminSession: RequestHandler = (req, res) => {
+// Verify session (both admin and staff)
+export const verifySession: RequestHandler = (req, res) => {
   try {
     const { sessionToken } = req.body;
 
@@ -105,13 +105,16 @@ export const verifyAdminSession: RequestHandler = (req, res) => {
       return res.status(401).json({ error: "Invalid or expired session" });
     }
 
-    res.json({ 
-      success: true, 
+    const sessionData = activeSessions.get(sessionToken);
+    res.json({
+      success: true,
       valid: true,
-      message: "Session is valid" 
+      userType: sessionData?.type,
+      username: sessionData?.username,
+      message: "Session is valid"
     });
   } catch (error) {
-    console.error("Error verifying admin session:", error);
+    console.error("Error verifying session:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
