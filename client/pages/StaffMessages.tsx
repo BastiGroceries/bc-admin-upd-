@@ -151,6 +151,15 @@ export default function StaffMessages() {
                 <span className="text-lg font-semibold text-foreground">{messages.length}</span>
               </div>
               <button
+                onClick={() => fetchMessages(true)}
+                disabled={isRefreshing}
+                className="glass-dark px-3 py-2 rounded-lg border border-neon-blue/30 text-foreground hover:bg-neon-blue/10 transition-colors flex items-center space-x-2 disabled:opacity-50"
+                title="Refresh messages"
+              >
+                <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                <span className="hidden sm:inline">Refresh</span>
+              </button>
+              <button
                 onClick={() => setShowLogoutDialog(true)}
                 className="px-4 py-2 bg-gradient-to-r from-neon-blue to-blood-500 hover:from-neon-blue/80 hover:to-blood-400 text-white font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-neon-blue/30 flex items-center space-x-2"
               >
