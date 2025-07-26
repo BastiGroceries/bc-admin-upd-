@@ -32,15 +32,47 @@ export const adminLogin: RequestHandler = (req, res) => {
 
     // Generate session token
     const sessionToken = generateSessionToken();
-    activeSessions.add(sessionToken);
+    activeSessions.set(sessionToken, { type: 'admin', username });
 
-    res.json({ 
-      success: true, 
+    res.json({
+      success: true,
       sessionToken,
-      message: "Login successful" 
+      userType: 'admin',
+      message: "Login successful"
     });
   } catch (error) {
     console.error("Error during admin login:", error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+};
+
+// Staff login
+export const staffLogin: RequestHandler = (req, res) => {
+  try {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+      return res.status(400).json({ error: "Username and password are required" });
+    }
+
+    // Check staff credentials
+    const staffUser = STAFF_USERS.find(user => user.username === username && user.password === password);
+    if (!staffUser) {
+      return res.status(401).json({ error: "Invalid credentials" });
+    }
+
+    // Generate session token
+    const sessionToken = generateSessionToken();
+    activeSessions.set(sessionToken, { type: 'staff', username });
+
+    res.json({
+      success: true,
+      sessionToken,
+      userType: 'staff',
+      message: "Login successful"
+    });
+  } catch (error) {
+    console.error("Error during staff login:", error);
     res.status(500).json({ error: "Internal server error" });
   }
 };
