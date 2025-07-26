@@ -138,16 +138,31 @@ export default function Footer() {
               <h4 className="text-sm font-semibold text-foreground mb-2">
                 Stay in the loop
               </h4>
-              <div className="flex space-x-2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  className="flex-1 px-3 py-2 bg-input border border-border rounded text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-blood-500/50"
-                />
-                <button className="px-4 py-2 bg-gradient-to-r from-blood-500 to-blood-600 text-white text-sm font-medium rounded hover:from-blood-400 hover:to-blood-500 transition-colors">
-                  Subscribe
-                </button>
-              </div>
+              <form onSubmit={handleNewsletterSubmit} className="space-y-2">
+                <div className="flex space-x-2">
+                  <input
+                    type="email"
+                    value={newsletterEmail}
+                    onChange={(e) => setNewsletterEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-3 py-2 bg-input border border-border rounded text-sm text-foreground placeholder-foreground/50 focus:outline-none focus:ring-2 focus:ring-blood-500/50"
+                    disabled={isSubscribing}
+                  />
+                  <button
+                    type="submit"
+                    disabled={isSubscribing || !newsletterEmail.trim()}
+                    className="px-4 py-2 bg-gradient-to-r from-blood-500 to-blood-600 text-white text-sm font-medium rounded hover:from-blood-400 hover:to-blood-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {isSubscribing ? "..." : "Subscribe"}
+                  </button>
+                </div>
+                {subscriptionStatus === "success" && (
+                  <p className="text-green-400 text-xs">Successfully subscribed!</p>
+                )}
+                {subscriptionStatus === "error" && (
+                  <p className="text-red-400 text-xs">Already subscribed or error occurred.</p>
+                )}
+              </form>
             </div>
           </div>
 
