@@ -87,8 +87,8 @@ const Navigation = () => {
             </button>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="md:hidden">
+          {/* Mobile menu button - hidden since nav is always visible */}
+          <div className="hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-foreground hover:text-blood-400 transition-colors duration-300 p-2"
