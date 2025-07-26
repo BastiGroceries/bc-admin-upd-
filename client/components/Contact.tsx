@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Mail, MessageSquare, User, Send, CheckCircle } from "lucide-react";
+import { Mail, MessageSquare, User, Send, CheckCircle, Zap, Shield, Crown } from "lucide-react";
 
 interface FormData {
   name: string;
