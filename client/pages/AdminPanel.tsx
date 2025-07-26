@@ -18,6 +18,9 @@ export default function AdminPanel() {
     todayMessages: 0
   });
   const [isLoading, setIsLoading] = useState(true);
+  const [showLogoutDialog, setShowLogoutDialog] = useState(false);
+  const [isLoggingOut, setIsLoggingOut] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchStats();
