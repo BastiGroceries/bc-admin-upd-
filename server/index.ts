@@ -9,7 +9,7 @@ import {
   getContactMessage,
   getNewsletterSubscriptions
 } from "./routes/contact";
-import { adminLogin, adminLogout, verifyAdminSession } from "./routes/auth";
+import { adminLogin, staffLogin, logout, verifySession } from "./routes/auth";
 
 export function createServer() {
   const app = express();
