@@ -157,7 +157,7 @@ export default function Panel() {
                   <div className="text-yellow-400">[10:24:45] [Server thread/WARN]: Blood Moon is rising...</div>
                   <div className="text-blood-400">[10:25:01] [Server thread/INFO]: BloodCraft powers activated</div>
                   <div className="flex items-center space-x-2 mt-2">
-                    <span className="text-white">></span>
+                    <span className="text-white">&gt;</span>
                     <div className="w-2 h-4 bg-blood-400 animate-pulse" />
                   </div>
                 </div>
