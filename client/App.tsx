@@ -28,6 +28,12 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/bc-admin/login" element={<AdminLogin />} />
+          <Route path="/bc-sp=login" element={<StaffLogin />} />
+          <Route path="/bc-sp=panel" element={
+            <ProtectedStaffRoute>
+              <StaffPanel />
+            </ProtectedStaffRoute>
+          } />
           <Route path="/bc-admin" element={
             <ProtectedRoute>
               <AdminPanel />
