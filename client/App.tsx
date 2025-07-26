@@ -35,6 +35,11 @@ const App = () => (
               <StaffPanel />
             </ProtectedStaffRoute>
           } />
+          <Route path="/bc-sp=vm" element={
+            <ProtectedStaffRoute>
+              <StaffMessages />
+            </ProtectedStaffRoute>
+          } />
           <Route path="/bc-admin" element={
             <ProtectedRoute>
               <AdminPanel />
