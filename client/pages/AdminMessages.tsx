@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft, MessageSquare, Mail, Clock, User } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { ArrowLeft, MessageSquare, Mail, Clock, User, LogOut } from "lucide-react";
+import LogoutDialog from "../components/LogoutDialog";
 
 interface ContactMessage {
   id: string;
