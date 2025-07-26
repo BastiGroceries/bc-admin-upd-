@@ -101,9 +101,18 @@ export default function AdminMessages() {
                 </p>
               </div>
             </div>
-            <div className="flex items-center space-x-2">
-              <MessageSquare className="w-6 h-6 text-blood-400" />
-              <span className="text-lg font-semibold text-foreground">{messages.length}</span>
+            <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <MessageSquare className="w-6 h-6 text-blood-400" />
+                <span className="text-lg font-semibold text-foreground">{messages.length}</span>
+              </div>
+              <button
+                onClick={() => setShowLogoutDialog(true)}
+                className="btn-blood flex items-center space-x-2 px-4 py-2"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>Logout</span>
+              </button>
             </div>
           </div>
         </div>
