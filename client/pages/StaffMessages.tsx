@@ -142,6 +142,7 @@ export default function StaffMessages() {
                 <p className="text-foreground/70 mt-1">
                   {messages.length} total messages • {messages.filter(m => !m.read).length} unread
                   <span className="text-neon-blue ml-2">• {staffUsername}</span>
+                  <span className="text-green-400 ml-2">• Auto-synced</span>
                 </p>
               </div>
             </div>
