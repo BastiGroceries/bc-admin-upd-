@@ -21,6 +21,18 @@ export default function AdminMessages() {
 
   useEffect(() => {
     fetchMessages();
+
+    // Auto-refresh messages every 10 seconds for real-time sync
+    const interval = setInterval(fetchMessages, 10000);
+
+    // Also refresh when window gets focus (user returns to tab)
+    const handleFocus = () => fetchMessages();
+    window.addEventListener('focus', handleFocus);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('focus', handleFocus);
+    };
   }, []);
 
   const fetchMessages = async () => {
