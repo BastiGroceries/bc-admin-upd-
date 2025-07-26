@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { MessageSquare, Mail, Users, Activity, ArrowRight } from "lucide-react";
+import { Link, useNavigate } from "react-router-dom";
+import { MessageSquare, Mail, Users, Activity, ArrowRight, LogOut } from "lucide-react";
+import LogoutDialog from "../components/LogoutDialog";
 
 interface Stats {
   totalMessages: number;
