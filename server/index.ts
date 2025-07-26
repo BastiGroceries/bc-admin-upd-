@@ -33,8 +33,9 @@ export function createServer() {
 
   // Authentication routes
   app.post("/api/admin/login", adminLogin);
-  app.post("/api/admin/logout", adminLogout);
-  app.post("/api/admin/verify", verifyAdminSession);
+  app.post("/api/staff/login", staffLogin);
+  app.post("/api/logout", logout);
+  app.post("/api/verify", verifySession);
 
   // Admin routes
   app.get("/api/admin/messages", getContactMessages);
