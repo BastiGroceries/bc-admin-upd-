@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Heart, Github, Twitter, MessageCircle, Youtube, Mail } from "lucide-react";
 
 const BloodSplatter = ({ className = "" }: { className?: string }) => (
