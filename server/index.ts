@@ -31,6 +31,11 @@ export function createServer() {
   app.post("/api/contact", submitContact);
   app.post("/api/newsletter", subscribeNewsletter);
 
+  // Authentication routes
+  app.post("/api/admin/login", adminLogin);
+  app.post("/api/admin/logout", adminLogout);
+  app.post("/api/admin/verify", verifyAdminSession);
+
   // Admin routes
   app.get("/api/admin/messages", getContactMessages);
   app.get("/api/admin/messages/:id", getContactMessage);
