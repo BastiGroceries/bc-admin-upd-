@@ -60,7 +60,9 @@ export default function StaffMessages() {
     }
   };
 
-  const fetchMessages = async () => {
+  const fetchMessages = async (showRefreshIndicator = false) => {
+    if (showRefreshIndicator) setIsRefreshing(true);
+
     try {
       const response = await fetch("/api/admin/messages");
       const data = await response.json();
@@ -69,6 +71,7 @@ export default function StaffMessages() {
       console.error("Error fetching messages:", error);
     } finally {
       setIsLoading(false);
+      if (showRefreshIndicator) setIsRefreshing(false);
     }
   };
 
