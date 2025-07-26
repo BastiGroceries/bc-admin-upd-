@@ -4,8 +4,13 @@ import { RequestHandler } from "express";
 const ADMIN_USERNAME = "bc";
 const ADMIN_PASSWORD = "HardikSri@123";
 
+// Staff credentials
+const STAFF_USERS = [
+  { username: "bc-s=1", password: "bc-p=yash" }
+];
+
 // Simple session storage (in production, use proper session management)
-let activeSessions: Set<string> = new Set();
+let activeSessions: Map<string, { type: 'admin' | 'staff', username: string }> = new Map();
 
 // Generate session token
 const generateSessionToken = (): string => {
