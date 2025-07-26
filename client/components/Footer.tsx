@@ -46,7 +46,7 @@ export default function Footer() {
   };
 
   const socialLinks = [
-    { name: "Discord", icon: Discord, href: "#", color: "hover:text-indigo-400" },
+    { name: "Discord", icon: MessageCircle, href: "#", color: "hover:text-indigo-400" },
     { name: "Twitter", icon: Twitter, href: "#", color: "hover:text-blue-400" },
     { name: "YouTube", icon: Youtube, href: "#", color: "hover:text-red-400" },
     { name: "GitHub", icon: Github, href: "#", color: "hover:text-gray-300" },
