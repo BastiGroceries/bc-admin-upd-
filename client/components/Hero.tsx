@@ -123,7 +123,7 @@ export default function Hero() {
           {/* Main headline */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             <span className="block mb-2">
-              <span className="text-foreground">Empower Your</span>
+              <span className="text-foreground">Empower your</span>
             </span>
             <span className="block mb-2">
               <span className="blood-text text-shadow-lg">Minecraft Hosting</span>
