@@ -63,7 +63,7 @@ export default function AdminPanel() {
     try {
       const sessionToken = localStorage.getItem("bc_admin_session");
 
-      await fetch("/api/admin/logout", {
+      await fetch("/api/logout", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
