@@ -57,6 +57,29 @@ export default function AdminPanel() {
     }
   };
 
+  const handleLogout = async () => {
+    setIsLoggingOut(true);
+
+    try {
+      const sessionToken = localStorage.getItem("bc_admin_session");
+
+      await fetch("/api/admin/logout", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ sessionToken }),
+      });
+    } catch (error) {
+      console.error("Error during logout:", error);
+    } finally {
+      localStorage.removeItem("bc_admin_session");
+      setIsLoggingOut(false);
+      setShowLogoutDialog(false);
+      navigate("/bc-admin/login");
+    }
+  };
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
