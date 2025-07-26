@@ -11,6 +11,8 @@ import NotFound from "./pages/NotFound";
 import AdminPanel from "./pages/AdminPanel";
 import AdminMessages from "./pages/AdminMessages";
 import MessageView from "./pages/MessageView";
+import AdminLogin from "./pages/AdminLogin";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
