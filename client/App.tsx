@@ -15,6 +15,7 @@ import AdminLogin from "./pages/AdminLogin";
 import StaffLogin from "./pages/StaffLogin";
 import StaffPanel from "./pages/StaffPanel";
 import StaffMessages from "./pages/StaffMessages";
+import ServerPanel from "./pages/ServerPanel";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ProtectedStaffRoute from "./components/ProtectedStaffRoute";
 
