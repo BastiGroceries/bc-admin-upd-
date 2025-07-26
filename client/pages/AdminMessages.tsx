@@ -114,6 +114,7 @@ export default function AdminMessages() {
                 <h1 className="text-3xl font-bold text-foreground">Contact Messages</h1>
                 <p className="text-foreground/70 mt-1">
                   {messages.length} total messages • {messages.filter(m => !m.read).length} unread
+                  <span className="text-green-400 ml-2">• Auto-synced</span>
                 </p>
               </div>
             </div>
