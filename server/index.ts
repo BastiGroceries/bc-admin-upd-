@@ -26,5 +26,14 @@ export function createServer() {
 
   app.get("/api/demo", handleDemo);
 
+  // Contact form routes
+  app.post("/api/contact", submitContact);
+  app.post("/api/newsletter", subscribeNewsletter);
+
+  // Admin routes
+  app.get("/api/admin/messages", getContactMessages);
+  app.get("/api/admin/messages/:id", getContactMessage);
+  app.get("/api/admin/newsletter", getNewsletterSubscriptions);
+
   return app;
 }
