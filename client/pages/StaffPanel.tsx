@@ -206,8 +206,8 @@ export default function StaffPanel() {
 
         {/* Staff features */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <Link 
-            to="/bc-admin/messages/admin/show"
+          <Link
+            to="/bc-sp=vm"
             className="card-blood p-8 hover-lift group block border-neon-blue/20"
           >
             <div className="flex items-center space-x-4">
