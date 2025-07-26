@@ -103,9 +103,9 @@ const Navigation = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
+      {/* Mobile Navigation Menu - hidden since nav is always visible */}
       <div
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
+        className={`hidden transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
