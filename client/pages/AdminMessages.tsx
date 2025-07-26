@@ -123,6 +123,15 @@ export default function AdminMessages() {
                 <span className="text-lg font-semibold text-foreground">{messages.length}</span>
               </div>
               <button
+                onClick={() => fetchMessages(true)}
+                disabled={isRefreshing}
+                className="glass-dark px-3 py-2 rounded-lg border border-blood-500/30 text-foreground hover:bg-blood-500/10 transition-colors flex items-center space-x-2 disabled:opacity-50"
+                title="Refresh messages"
+              >
+                <RefreshCw className={`w-4 h-4 ${isRefreshing ? 'animate-spin' : ''}`} />
+                <span className="hidden sm:inline">Refresh</span>
+              </button>
+              <button
                 onClick={() => setShowLogoutDialog(true)}
                 className="btn-blood flex items-center space-x-2 px-4 py-2"
               >
