@@ -1,4 +1,4 @@
-import { Heart, Github, Twitter, Discord, Youtube, Mail } from "lucide-react";
+import { Heart, Github, Twitter, MessageCircle, Youtube, Mail } from "lucide-react";
 
 const BloodSplatter = ({ className = "" }: { className?: string }) => (
   <div className={`absolute opacity-20 ${className}`}>
