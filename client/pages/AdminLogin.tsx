@@ -22,7 +22,7 @@ export default function AdminLogin() {
 
   const verifySession = async (token: string) => {
     try {
-      const response = await fetch("/api/admin/verify", {
+      const response = await fetch("/api/verify", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
