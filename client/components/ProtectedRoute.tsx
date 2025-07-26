@@ -32,7 +32,14 @@ export default function ProtectedRoute({ children }: ProtectedRouteProps) {
       });
 
       if (response.ok) {
-        setIsAuthenticated(true);
+        const data = await response.json();
+        if (data.userType === 'admin') {
+          setIsAuthenticated(true);
+        } else {
+          localStorage.removeItem("bc_admin_session");
+          setIsAuthenticated(false);
+          navigate("/bc-admin/login");
+        }
       } else {
         localStorage.removeItem("bc_admin_session");
         setIsAuthenticated(false);
