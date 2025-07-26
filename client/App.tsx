@@ -22,6 +22,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/bc-admin" element={<AdminPanel />} />
+          <Route path="/bc-admin/messages/admin/show" element={<AdminMessages />} />
+          <Route path="/messages/submitted/:id" element={<MessageView />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
