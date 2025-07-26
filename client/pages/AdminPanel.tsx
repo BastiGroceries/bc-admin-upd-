@@ -135,13 +135,22 @@ export default function AdminPanel() {
               </h1>
               <p className="text-foreground/70 mt-2">Manage your hosting empire</p>
             </div>
-            <Link
-              to="/"
-              className="btn-blood flex items-center space-x-2"
-            >
-              <span>Back to Site</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            <div className="flex items-center space-x-3">
+              <Link
+                to="/"
+                className="glass-dark px-4 py-2 rounded-lg border border-blood-500/30 text-foreground hover:bg-blood-500/10 transition-colors flex items-center space-x-2"
+              >
+                <span>Back to Site</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+              <button
+                onClick={() => setShowLogoutDialog(true)}
+                className="btn-blood flex items-center space-x-2"
+              >
+                <LogOut className="w-4 h-4" />
+                <span>Logout</span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
