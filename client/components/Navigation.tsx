@@ -66,7 +66,7 @@ const Navigation = () => {
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className="text-foreground/80 hover:text-foreground px-3 py-2 text-sm font-medium transition-all duration-300 relative group"
+                  className="text-foreground/80 hover:text-foreground px-2 md:px-3 py-2 text-xs md:text-sm font-medium transition-all duration-300 relative group whitespace-nowrap"
                 >
                   {item.label}
                   <span className="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-blood-500 to-neon-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
