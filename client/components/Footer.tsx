@@ -18,6 +18,9 @@ const BloodSplatter = ({ className = "" }: { className?: string }) => (
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [isSubscribing, setIsSubscribing] = useState(false);
+  const [subscriptionStatus, setSubscriptionStatus] = useState<"idle" | "success" | "error">("idle");
 
   const footerLinks = {
     Product: [
