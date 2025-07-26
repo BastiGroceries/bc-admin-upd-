@@ -24,9 +24,22 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/bc-admin" element={<AdminPanel />} />
-          <Route path="/bc-admin/messages/admin/show" element={<AdminMessages />} />
-          <Route path="/messages/submitted/:id" element={<MessageView />} />
+          <Route path="/bc-admin/login" element={<AdminLogin />} />
+          <Route path="/bc-admin" element={
+            <ProtectedRoute>
+              <AdminPanel />
+            </ProtectedRoute>
+          } />
+          <Route path="/bc-admin/messages/admin/show" element={
+            <ProtectedRoute>
+              <AdminMessages />
+            </ProtectedRoute>
+          } />
+          <Route path="/messages/submitted/:id" element={
+            <ProtectedRoute>
+              <MessageView />
+            </ProtectedRoute>
+          } />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
